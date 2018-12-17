@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const snekfetch = require("snekfetch");
-
-
 const prefix = "!";
 
 
@@ -13,7 +10,13 @@ const prefix = "!";
 
 
 
-
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose: ** Welcome to server Legends **:rose: 
+:crown:**You are the member number**  ${member}:crown:  
+yo  ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
 
 
 
