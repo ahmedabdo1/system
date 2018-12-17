@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "!";
+
 const snekfetch = require("snekfetch");
 
 
-
+const prefix = "!";
 
 
 client.on('message', message => {
