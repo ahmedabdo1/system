@@ -14,6 +14,103 @@ const prefix = "!";
 
 
 
+client.on('message', message => {
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **bc1** ' ,' **بث جماعي + للكل + مطور** ')
+.addField('     **bc2**  ' ,' **بث جماعي + للكل + غير مطور** ')
+.addField('     **bc3** ' , '**بث جماعي + للأونلاين + غير مطور + منشن للشخص**') 
+.addField('     **bc4** ' , '**بث جماعي + للكل + غير مطور + منشن للشخص**') 
+.addField('     **ping** ' ,' ** سرعة اتصال البوت**')
+.addField('     **كت تويت** ' , '**هذي لعبة الكت تويت**')
+.addField('     **هل تعلم ** ' ,' **  لعبة هل تعلم  ** ')
+.addField('     **clear ** ' ,' **  لمسح الشات بدون رقم  ** ')
+.addField('     **say ** ' ,' **  عشان يتكلم عنك  ** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+           let args = message.content.split(' ').slice(1);
+    if(message.content.split(' ')[0] == '$color'){
+            const embedd = new Discord.RichEmbed()
+      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+    .setDescription(`**لا يوجد لون بهذا الأسم ** :x: `)
+    .setColor(`ff0000`)
+ 
+     if(!isNaN(args) && args.length > 0)
+     
+ 
+ if    (!(message.guild.roles.find("name",`${args}`))) return  message.channel.sendEmbed(embedd);
+ 
+ 
+        var a = message.guild.roles.find("name",`${args}`)
+                 if(!a)return;
+ const embed = new Discord.RichEmbed()
+                     
+      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+    .setDescription(`**Done , تم تغير لونك . :white_check_mark: **`)
+  
+    .setColor(`${a.hexColor}`)
+   message.channel.sendEmbed(embed);
+           if (!args)return;
+ setInterval(function(){})
+                   let count = 0;
+                   let ecount = 0;
+         for(let x = 1; x < 201; x++){
+            
+             message.member.removeRole(message.guild.roles.find("name",`${x}`))
+           
+             }
+                 message.member.addRole(message.guild.roles.find("name",`${args}`));
+         
+             
+     }
+ });
+
+
+
+
+
+
+
+
+
+
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc4")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
+
+
+
+
+
+
 
 
 
