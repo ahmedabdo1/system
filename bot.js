@@ -163,4 +163,4 @@ message.channel.send({embed});
 
 
 
-  client.login(process.env.BOT_TOKEN);
+  client.login(process.env.BOT_TOKE);
