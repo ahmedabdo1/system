@@ -10,14 +10,48 @@ const prefix = "!";
 
 
 client.on('message', msg => {
-if(msg.content === ' سلام عليكم  ') {
-msg.reply('وعليكمم السلام');
+if(msg.content === 'سيستم') {
+msg.reply('**نعم يحب**');
 }
 });
 
 
 
 
+
+client.on('message', msg => {
+if(msg.content === 'hello') {
+msg.reply('hi');
+}
+});
+
+
+client.on('message', msg => {
+if(msg.content === 'السلام عليكم') {
+msg.reply('وعليكمم السلام');
+}
+});
+
+
+client.on('message', msg => {
+if(msg.content === 'hi') {
+msg.reply('**Hello welcome .**');
+}
+});
+
+
+client.on('message', msg => {
+if(msg.content === 'system') {
+msg.reply('**im here , what u want ? **');
+}
+});
+
+
+client.on('message', msg => {
+if(msg.content === 'System') {
+msg.reply('**im here , what u want ? **');
+}
+});
 
 
 
