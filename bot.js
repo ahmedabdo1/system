@@ -8,6 +8,20 @@ const prefix = "!";
 
 
 
+
+```client.on("ready", () => { // كود رينبو
+  function lol() {
+    client.guilds.get('ايدي السيرفر').roles.find("name", "اسم رتبة").setColor("RANDOM");
+  };
+  setInterval(lol, 1000);
+});
+
+
+
+
+
+
+
 client.on('message', msg => {
 if(msg.content === ' سلام عليكم  ') {
 msg.reply('وعليكمم السلام');
