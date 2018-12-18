@@ -7,6 +7,20 @@ const prefix = "!";
 
 
 
+
+client.on('message', msg => {
+if(msg.content === ' سلام عليكم  ') {
+msg.reply('وعليكمم السلام');
+}
+});
+
+
+
+
+
+
+
+
 client.on('message',function(message) {
 
     let messageArray = message.content.split(' ');
