@@ -60,26 +60,6 @@ client.on("guildMemberAdd", (member) => {
 
 
 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '517879024815570944').setName("W");
-client.channels.find('id', '517879024815570944').setName("We");
-client.channels.find('id', '517879024815570944').setName("Wel");
-client.channels.find('id', '517879024815570944').setName("Welc");
-client.channels.find('id', '517879024815570944').setName("Welco");
-client.channels.find('id', '517879024815570944').setName("Welcom");
-client.channels.find('id', '517879024815570944').setName("Welcome");
-client.channels.find('id', '517879024815570944').setName("Welcome T");
-client.channels.find('id', '517879024815570944').setName("Welcome To");
-client.channels.find('id', '517879024815570944').setName("Welcome To L");
-client.channels.find('id', '517879024815570944').setName("Welcome To Le");
-client.channels.find('id', '517879024815570944').setName("Welcome To Leg");
-client.channels.find('id', '517879024815570944').setName("Welcome To Lege");
-client.channels.find('id', '517879024815570944').setName("Welcome To Legen");
-client.channels.find('id', '517879024815570944').setName("Welcome To Legend");
-client.channels.find('id', '517879024815570944').setName("Welcome To Legends");
-  }, 3000);
-});
 
 
 
