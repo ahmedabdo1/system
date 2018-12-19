@@ -9,6 +9,61 @@ const prefix = "!";
 
 
 
+
+
+
+
+client.on("message", msg => {
+    if(msg.author.bot) return;
+if(msg.channel.type === 'dm') return;
+
+let p = "!";
+let msgarray = msg.content.split(" ");
+let cmd = msgarray[0];
+let args = msgarray.slice(1);
+
+
+
+if(cmd === `kick`){
+
+
+    let kUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+if(!kUser) return msg.channel.send("Can't find user!");
+let kreason = args.join(" ").slice(22);
+if(!msg.member.hasPermission("KICK_MEMBERS")) return msg.channel.send("No can do pal!");
+if(kUser.hasPermission("KICK_MEMBERS")) return msg.channel.send("That person can't be kicked");
+
+let kickembed = new Discord.RichEmbed()
+.setDescription("~kick~")
+.setColor("BLACK")
+.addField("Kiced User", `${kUser} with ID: ${kUser.id}`)
+.addField("Kicked By", `<@${msg.author.id}> with ID: ${msg.author.id}`)
+.addField("Kicked In", msg.channel)
+.addField("Time", msg.createdAt)
+.addField("Reason", kreason)
+
+let kickChannel = msg.guild.channels.find(`name`,"log");
+if(!kickChannel) return msg.channel.send("Can't find `log` channel.");
+
+msg.guild.member(kUser).kick(kreason);
+kickChannel.send(kickembed)
+    return;
+
+}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 client.on('message', msg => {
 if(msg.content === 'سيستم') {
 msg.reply('**نعم يحب**');
