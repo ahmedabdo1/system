@@ -11,8 +11,6 @@ const prefix = "!";
 
 
 
-
-
 client.on("message", msg => {
     if(msg.author.bot) return;
 if(msg.channel.type === 'dm') return;
@@ -24,7 +22,7 @@ let args = msgarray.slice(1);
 
 
 
-if(cmd === `kick`){
+if(cmd === `${p}kick`){
 
 
     let kUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
@@ -42,8 +40,8 @@ let kickembed = new Discord.RichEmbed()
 .addField("Time", msg.createdAt)
 .addField("Reason", kreason)
 
-let kickChannel = msg.guild.channels.find(`name`,"log");
-if(!kickChannel) return msg.channel.send("Can't find `log` channel.");
+let kickChannel = msg.guild.channels.find(`name`,"اسم الروم");
+if(!kickChannel) return msg.channel.send("Can't find `اسم الروم` channel.");
 
 msg.guild.member(kUser).kick(kreason);
 kickChannel.send(kickembed)
@@ -52,7 +50,6 @@ kickChannel.send(kickembed)
 }
 
 });
-
 
 
 
