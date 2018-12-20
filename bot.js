@@ -11,6 +11,41 @@ const prefix = "!";
 
 
 
+
+
+
+client.on('message', message => {
+  var prefix = "ق"; 
+  
+if (message.author.bot) return;
+if (!message.content.startsWith(prefix)) return;
+   
+let command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+   
+let args = message.content.split(" ").slice(1);
+   
+if (command === "ول") {
+message.delete()
+  message.channel.sendMessage(args.join(" ")).catch(console.error);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.on("message", msg => {
     if(msg.author.bot) return;
 if(msg.channel.type === 'dm') return;
